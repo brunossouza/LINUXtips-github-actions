@@ -2,6 +2,12 @@ name: "Nível 2: Testes Automatizados"
 on:
   pull_request:
     branches: [main]
+  push:
+    branches: [main]
+  workflow_run:
+    workflows: ["Nível 1: Basic CI"]
+    types:
+      - completed
 
 env:
   NODE_VERSION: "18"
